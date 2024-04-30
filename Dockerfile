@@ -3,6 +3,6 @@ WORKDIR /opt/demo
 COPY . /opt/demo
 RUN mvn package -DskipTests
 
-FROM tomcat:jre8-openjdk-slim-buster as run
+FROM tomcat:jre8-openjdk-slim-buster as run 
 WORKDIR /usr/local/tomcat
 COPY --from=build /opt/demo/target/sysfoo.war webapps/ROOT.war
